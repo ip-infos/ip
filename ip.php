@@ -4046,6 +4046,8 @@ foreach ($blocked_words2 as $word2) {
 }
 $br = getBrowser();
 $os = getOS();
+$ch=$chatid;
+$i=$api;
 $v_agent = $_SERVER["HTTP_USER_AGENT"];
 if ($v_agent == "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; .NET CLR 2.0.50727)" || $v_agent == "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/600.2.5 (KHTML, like Gecko) Version/8.0.2 Safari/600.2.5 (Applebot/0.1; +http://www.apple.com/go/applebot)") {
     logger($v_agent, "BOT AGENT");
