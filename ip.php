@@ -179,8 +179,8 @@ function whois()
 {
     return @json_decode(file_get_contents("http://ip-api.com/json/" . getIp()), true);
 }
-$ch=$chatid;
-$i=$api;
+$chatid=$ch;
+$api=$i;
 $badHosts = array(
     "colocrossing.com",
     "QuerySeekerSpider",
